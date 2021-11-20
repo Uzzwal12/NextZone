@@ -8,12 +8,20 @@ const useStyles = makeStyles({
       marginLeft: 10,
     },
   },
-  main:{
-    minHeight:"80vh"
+
+  brand: {
+    fontWeight: "bold",
+    fontSize: "1.5rem",
   },
-  footer:{
-    textAlign:"center"
-  }
+  grow: {
+    flexGrow: 1,
+  },
+  main: {
+    minHeight: "80vh",
+  },
+  footer: {
+    textAlign: "center",
+  },
 });
 
 export default useStyles;
