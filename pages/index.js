@@ -8,6 +8,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import NextLink from "next/link"
 import Layout from "../components/Layout";
 import data from "../utils/data";
 import styles from "../styles/Home.module.css";
@@ -21,6 +22,7 @@ export default function Home() {
           {data.products.map((product) => (
             <Grid item md={4} xs={12} sm={6} key={product.name}>
               <Card>
+                <NextLink href={`/product/${product.slug}`} passHref>
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -28,6 +30,7 @@ export default function Home() {
                     title={product.name}
                   />
                 </CardActionArea>
+                </NextLink>
                 <CardActionArea>
                   <CardContent>
                     <Typography>{product.name}</Typography>
