@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import useStyles from "../utils/styles";
 import { Store } from "../utils/store";
+import Cookies from "js-cookie";
 
 export default function Layout({ title, description, children }) {
   const { state, dispatch } = useContext(Store);
@@ -44,7 +45,10 @@ export default function Layout({ title, description, children }) {
   });
 
   const darkModeHandler = () => {
+    const newDarkMode = !darkMode
+    Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF')
     dispatch({ type: darkMode ? "DARK_MODE_OFF" : "DARK_MODE_ON" });
+
   };
 
   return (
